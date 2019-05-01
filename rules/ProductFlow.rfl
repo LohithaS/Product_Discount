@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.ruleflow:RuleFlow xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.ruleflow="http://ilog.rules.studio/model/ruleflow.ecore">
+  <name>ProductFlow</name>
+  <uuid>388aa6ab-96a8-4c4b-b512-e5a1add0fe42</uuid>
+  <locale>en_US</locale>
+  <categories>any</categories>
+  <rfModel>
+<Ruleflow xmlns="http://schemas.ilog.com/Rules/7.0/Ruleflow">
+  <Body>
+    <TaskList>
+      <StartTask Identifier="task_0"/>
+      <RuleTask ExecutionMode="Fastpath" ExitCriteria="None" Identifier="discountTree" Ordering="Default">
+        <FinalActions Language="bal"><![CDATA[set savedAmount  to product .discountCheck( the items of product )* discount /100 ; ]]>&#13;<![CDATA[
+set payAmount to product .discountCheck( the items of product ) - savedAmount ; ]]></FinalActions>
+        <RuleList>
+          <Rule Uuid="7167f8db-a6e9-47e1-bebf-e2384433cbaa"/>
+        </RuleList>
+      </RuleTask>
+      <StopTask Identifier="task_1">
+        <Actions Language="irl"><![CDATA[coinsAdded=coinsFunction();]]></Actions>
+      </StopTask>
+    </TaskList>
+    <NodeList>
+      <TaskNode Identifier="node_0" Task="task_0"/>
+      <TaskNode Identifier="node_1" Task="task_1"/>
+      <TaskNode Identifier="node_3" Task="discountTree"/>
+    </NodeList>
+    <TransitionList>
+      <Transition Identifier="transition_4" Source="node_0" Target="node_3"/>
+      <Transition Identifier="transition_5" Source="node_3" Target="node_1"/>
+    </TransitionList>
+  </Body>
+  <Resources>
+    <ResourceSet Locale="en_US">
+      <Data Name="node_3#height">40.0</Data>
+      <Data Name="node_0#height">21.0</Data>
+      <Data Name="node_3#y">91.0</Data>
+      <Data Name="node_3#width">111.36914</Data>
+      <Data Name="node_3#name">node_3</Data>
+      <Data Name="node_1#name">node_2</Data>
+      <Data Name="node_3#x">55.68457</Data>
+      <Data Name="node_0#y">10.5</Data>
+      <Data Name="node_0#x">55.68457</Data>
+      <Data Name="node_1#x">55.684574</Data>
+      <Data Name="node_1#width">15.000008</Data>
+      <Data Name="node_1#y">168.5</Data>
+      <Data Name="node_1#height">15.000015</Data>
+      <Data Name="node_0#width">21.0</Data>
+      <Data Name="node_0#name">node_0</Data>
+    </ResourceSet>
+  </Resources>
+  <Properties>
+    <imports><![CDATA[import com.Product;
+use customer;
+use coinsAdded;
+use coinsFunction();
+]]></imports>
+  </Properties>
+</Ruleflow></rfModel>
+</ilog.rules.studio.model.ruleflow:RuleFlow>

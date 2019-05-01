@@ -1,0 +1,7 @@
+variables {
+  com.Product product;
+  java.lang.Double discount;
+  java.lang.Double savedAmount;
+  java.lang.Double payAmount;
+  java.lang.Integer coinsAdded;
+}

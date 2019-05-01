@@ -1,0 +1,104 @@
+// begin DT discountTree
+// -- begin rule 'discountTree 0'
+rule discountTree_0 {
+   property ilog.rules.business_name = "discountTree 1";
+   property ilog.rules.dt = "discountTree";
+   property ilog.rules.group = "discountTree";
+   property ilog.rules.package_name = "";
+   property status = "new";
+   when {
+      com.Product() from product;
+      evaluate ((((ilog.rules.brl.IlrCollectionUtil.getSize(product.items) > 0) == (true)) && ((product.id.equals("gold")))));
+   } then {
+      discount = java.lang.Double.valueOf((double) 8 );
+      ?context.updateContext();
+   }
+}
+
+// -- end rule 'discountTree 0'
+// -- begin rule 'discountTree 1'
+rule discountTree_1 {
+   property ilog.rules.business_name = "discountTree 2";
+   property ilog.rules.dt = "discountTree";
+   property ilog.rules.group = "discountTree";
+   property ilog.rules.package_name = "";
+   property status = "new";
+   when {
+      com.Product() from product;
+      evaluate ((((ilog.rules.brl.IlrCollectionUtil.getSize(product.items) > 0) == (true)) && ((product.id.equals("diamond")))));
+   } then {
+      discount = java.lang.Double.valueOf((double) 10 );
+      ?context.updateContext();
+   }
+}
+
+// -- end rule 'discountTree 1'
+// -- begin rule 'discountTree 2'
+rule discountTree_2 {
+   property ilog.rules.business_name = "discountTree 3";
+   property ilog.rules.dt = "discountTree";
+   property ilog.rules.group = "discountTree";
+   property ilog.rules.package_name = "";
+   property status = "new";
+   when {
+      com.Product() from product;
+      evaluate ((((ilog.rules.brl.IlrCollectionUtil.getSize(product.items) > 0) == (true)) && ((product.id.equals("silver")))));
+   } then {
+      discount = java.lang.Double.valueOf((double) 11 );
+      ?context.updateContext();
+   }
+}
+
+// -- end rule 'discountTree 2'
+// -- begin rule 'discountTree 3'
+rule discountTree_3 {
+   property ilog.rules.business_name = "discountTree 4";
+   property ilog.rules.dt = "discountTree";
+   property ilog.rules.group = "discountTree";
+   property ilog.rules.package_name = "";
+   property status = "new";
+   when {
+      com.Product() from product;
+      evaluate ((((ilog.rules.brl.IlrCollectionUtil.getSize(product.items) > 0) == (true)) && ((product.id.equals("platinum")))));
+   } then {
+      discount = java.lang.Double.valueOf((double) 12 );
+      ?context.updateContext();
+   }
+}
+
+// -- end rule 'discountTree 3'
+// -- begin rule 'discountTree 4'
+rule discountTree_4 {
+   property ilog.rules.business_name = "discountTree 5";
+   property ilog.rules.dt = "discountTree";
+   property ilog.rules.group = "discountTree";
+   property ilog.rules.package_name = "";
+   property status = "new";
+   when {
+      com.Product() from product;
+      evaluate ((((ilog.rules.brl.IlrCollectionUtil.getSize(product.items) > 0) == (true)) && (product.id !in {"gold", "diamond", "silver", "platinum"})));
+   } then {
+      discount = java.lang.Double.valueOf((double) 0 );
+      ?context.updateContext();
+   }
+}
+
+// -- end rule 'discountTree 4'
+// -- begin rule 'discountTree 5'
+rule discountTree_5 {
+   property ilog.rules.business_name = "discountTree 6";
+   property ilog.rules.dt = "discountTree";
+   property ilog.rules.group = "discountTree";
+   property ilog.rules.package_name = "";
+   property status = "new";
+   when {
+      com.Product() from product;
+      evaluate ((((ilog.rules.brl.IlrCollectionUtil.getSize(product.items) > 0) == (false))));
+   } then {
+      discount = java.lang.Double.valueOf((double) 0 );
+      ?context.updateContext();
+   }
+}
+
+// -- end rule 'discountTree 5'
+// end DT discountTree

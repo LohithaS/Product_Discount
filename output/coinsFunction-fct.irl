@@ -1,0 +1,18 @@
+use product;
+use coinsAdded;
+
+function java.lang.Integer coinsFunction() {
+int coin=product.discountCheck(product.items);
+int coinsAdded;
+if(coin>=50)
+{
+	coinsAdded=(coin/50);
+}
+
+else
+{
+	coinsAdded=0;
+}
+return coinsAdded;
+
+}

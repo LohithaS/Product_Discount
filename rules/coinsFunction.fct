@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.rule:Function xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.rule="http://ilog.rules.studio/model/rule.ecore">
+  <name>coinsFunction</name>
+  <uuid>2aff2781-5c6f-4afb-b579-3d7e20871ee9</uuid>
+  <returnType>java.lang.Integer</returnType>
+  <definition><![CDATA[int coin=product.discountCheck(product.items);
+int coinsAdded;
+if(coin>=50)
+{
+	coinsAdded=(coin/50);
+}
+
+else
+{
+	coinsAdded=0;
+}
+return coinsAdded;
+]]></definition>
+  <imports>use product;</imports>
+  <imports>use coinsAdded;</imports>
+</ilog.rules.studio.model.rule:Function>

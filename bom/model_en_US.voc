@@ -1,0 +1,19 @@
+# Vocabulary Properties
+uuid = 47155211-a9bf-4ece-a3a7-7df14b2789c3
+
+# com.Product
+com.Product#concept.label = product
+com.Product.discountCheck(java.util.List)#phrase.navigation = {this}.discountCheck({0})
+com.Product.id#phrase.action = set the id of {this} to {id}
+com.Product.id#phrase.navigation = {id} of {this}
+com.Product.items#phrase.action = set the items of {this} to {item}
+com.Product.items#phrase.navigation = {item} of {this}
+
+# com.items
+com.items#concept.label = items
+com.items.itemName#phrase.action = set the item name of {this} to {item name}
+com.items.itemName#phrase.navigation = {item name} of {this}
+com.items.price#phrase.action = set the price of {this} to {price}
+com.items.price#phrase.navigation = {price} of {this}
+com.items.quantity#phrase.action = set the quantity of {this} to {quantity}
+com.items.quantity#phrase.navigation = {quantity} of {this}

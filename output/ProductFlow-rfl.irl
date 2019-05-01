@@ -1,0 +1,36 @@
+import com.Product;
+use customer;
+use coinsAdded;
+use coinsFunction();
+
+use discount;
+use payAmount;
+use product;
+use savedAmount;
+
+flowtask ProductFlow {
+  property mainflowtask = false;
+  property ilog.rules.business_name = "ProductFlow";
+  property ilog.rules.package_name = "";
+  finalaction {
+    coinsAdded=coinsFunction();
+  };
+  body {
+    ProductFlow#discountTree;
+  }
+};
+
+ruletask ProductFlow#discountTree {
+  property ilog.rules.business_name = "ProductFlow>discountTree";
+  property ilog.rules.package_name = "";
+  algorithm = sequential;
+  property ilog.rules.engine.sequential.fastpath = true;
+  ordering = sorted;
+  finalaction {
+    savedAmount = java.lang.Double.valueOf((double)((double)(product.discountCheck(product.items)) * discount.doubleValue() / 100));payAmount = java.lang.Double.valueOf((double)((double)(product.discountCheck(product.items)) - savedAmount.doubleValue()));?context.updateContext();
+  };
+  body {
+    group("discountTree")
+  }
+};
+

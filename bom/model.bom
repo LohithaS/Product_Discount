@@ -1,0 +1,23 @@
+
+property loadGetterSetterAsProperties "true"
+property origin "xom:/ProductDiscount//ProductDiscountXOM"
+property uuid "5bcde9ed-2e69-46f7-9385-719698721e2e"
+package com;
+
+
+public class Product
+{
+    public string id;
+    public java.util.List items domain 0,* class com.items;
+    public Product();
+    public int discountCheck(java.util.List arg domain 0,* class com.items);
+}
+
+public class items
+{
+    public string itemName;
+    public int price;
+    public int quantity;
+    public items();
+}
+

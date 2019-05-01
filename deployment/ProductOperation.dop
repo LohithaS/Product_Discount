@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.rules.studio.model.decisionservice:Operation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.ibm.rules.studio.model.decisionservice="http://com.ibm.rules.studio/model/decisionservice.ecore" xmlns:ilog.rules.studio.model.query.extractor="http://ilog.rules.studio/model/query/extractor.ecore" rulesetName="ProductOperation" usingRuleflow="true" ruleflowName="ProductFlow" targetRuleProjectName="ProductDiscount">
+  <name>ProductOperation</name>
+  <uuid>4f46c7a6-6401-4b46-9d83-5706d60b7250</uuid>
+  <referencedVariables variableName="product" variableSetName="ProductDiscountVariables" direction="IN_OUT">
+    <variableSet href="../rules/ProductDiscountVariables.var#164d5f09-d1dc-421e-b54c-9562e744dbb8"/>
+  </referencedVariables>
+  <referencedVariables variableName="discount" variableSetName="ProductDiscountVariables" direction="OUT">
+    <variableSet href="../rules/ProductDiscountVariables.var#164d5f09-d1dc-421e-b54c-9562e744dbb8"/>
+  </referencedVariables>
+  <referencedVariables variableName="savedAmount" variableSetName="ProductDiscountVariables" direction="OUT">
+    <variableSet href="../rules/ProductDiscountVariables.var#164d5f09-d1dc-421e-b54c-9562e744dbb8"/>
+  </referencedVariables>
+  <referencedVariables variableName="payAmount" variableSetName="ProductDiscountVariables" direction="OUT">
+    <variableSet href="../rules/ProductDiscountVariables.var#164d5f09-d1dc-421e-b54c-9562e744dbb8"/>
+  </referencedVariables>
+  <referencedVariables variableName="coinsAdded" variableSetName="ProductDiscountVariables" direction="OUT">
+    <variableSet href="../rules/ProductDiscountVariables.var#164d5f09-d1dc-421e-b54c-9562e744dbb8"/>
+  </referencedVariables>
+  <ruleflow href="../rules/ProductFlow.rfl#388aa6ab-96a8-4c4b-b512-e5a1add0fe42"/>
+  <extractor xsi:type="ilog.rules.studio.model.query.extractor:QueryExtractor" name="ProductOperation_extractor" validator="Default Validator"/>
+  <targetRuleProject href="../../ProductDiscount#1821a268-0f50-4366-b874-dd327fe72a37"/>
+</com.ibm.rules.studio.model.decisionservice:Operation>
